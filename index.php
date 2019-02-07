@@ -1,40 +1,28 @@
-<?php
-$id = isset($_GET['userid']);
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>qrdeeplink</title>
-	<script src="https://d.line-scdn.net/liff/1.0/sdk.js" /></script>
+	
 </head>
-<body onload="newDoc()">
-
-
+<body>
+<script src="https://d.line-scdn.net/liff/1.0/sdk.js" /></script>
 <script>
-liff.init(
-  data => {
-    // Now you can call LIFF API
-    const userId = data.context.userId;
-  }
-);
-</script>
-<script src="http://code.jquery.com/jquery-latest.min.js">
-	
-	
-	liff.getProfile()
-.then(profile => {
-  const userId = profile.userId
-  $.get("index.php",{userid:userId});
-  
-
-})
-.catch((err) => {
-  console.log('error', err);
-});
-	
+$(window).on('load', function(){
+      
+    // Initializes a LIFF app
+      liff.init(function (data) {});
+    });
+	liff.getProfile().then(function (profile) {
+            const = profile.userId;
+            document.getElementById('profileid').textContent = profile.userId;
+            
+        }).catch(function (error) {
+            window.alert("Error getting profile: " + error);
+        });
+    
 
 </script>
-
+<div id="profileid">
 </body>
 </html>
 <?php 
