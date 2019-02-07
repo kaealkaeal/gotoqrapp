@@ -5,8 +5,7 @@ window.onload = function (e) {
 };
 
 function initializeApp(data) {
-    document.getElementById('languagefield').textContent = data.language;
-    document.getElementById('viewtypefield').textContent = data.context.viewType;
+    
     document.getElementById('useridfield').textContent = data.context.userId;
     
     
@@ -20,20 +19,17 @@ function initializeApp(data) {
 
     
 
-    // get profile call
-    document.getElementById('getprofilebutton').addEventListener('click', function () {
-        liff.getProfile().then(function (profile) {
-            document.getElementById('useridprofilefield').textContent = profile.userId;
-          
-            toggleProfileData();
-        }).catch(function (error) {
-            window.alert("Error getting profile: " + error);
-        });
-    });
-}
-
+  
 
 
 function toggleProfileData() {
     toggleElement('profileinfo');
+}
+function toggleElement(elementId) {
+    const elem = document.getElementById(elementId);
+    if (elem.offsetWidth > 0 && elem.offsetHeight > 0) {
+        elem.style.display = "none";
+    } else {
+        elem.style.display = "block";
+    }
 }
