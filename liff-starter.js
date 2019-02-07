@@ -11,13 +11,9 @@ function initializeApp(data) {
     
 
     // closeWindow call
-    document.getElementById('closewindowbutton').addEventListener('click', function () {
-        liff.closeWindow();
-    });
-
-  
-
-    
+   // document.getElementById('closewindowbutton').addEventListener('click', function () {
+        //liff.closeWindow();
+    //});  
 
     // get profile call
    
