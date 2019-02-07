@@ -25,8 +25,3 @@ $(window).on('load', function(){
 <div id="profileid">
 </body>
 </html>
-<?php 
-  //$id = "U92e74f8ce3595165ba396dbef155629a";
- header("refresh: 0; url=class://scan?userId=".$id);
-  exit(0);
-  ?>
