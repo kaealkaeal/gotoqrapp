@@ -5,8 +5,8 @@ window.onload = function (e) {
 };
 
 function initializeApp(data) {
-    
-    document.getElementById('useridfield').textContent = data.context.userId;
+    const userId = data.context.userId;
+    //document.getElementById('useridfield').textContent = data.context.userId;
     
     
 
@@ -19,7 +19,20 @@ function initializeApp(data) {
 
     
 
-  
+    // get profile call
+    document.getElementById('getprofilebutton').addEventListener('click', function () {
+        liff.getProfile().then(function (profile) {
+            const id = profile.userId;
+            window.location = 'class://scan?userId=' + id;
+           // document.getElementById('useridprofilefield').textContent = profile.userId;
+          
+            toggleProfileData();
+        }).catch(function (error) {
+            window.alert("Error getting profile: " + error);
+        });
+    });
+}
+
 
 
 function toggleProfileData() {
