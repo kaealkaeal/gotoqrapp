@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>qrdeeplink</title>
+	<title>qrdeep</title>
 	
 </head>
 <body>
@@ -22,6 +22,6 @@ $(window).on('load', function(){
     
 
 </script>
-<div id="profileid">
+<div id="profileid"></div>
 </body>
 </html>
